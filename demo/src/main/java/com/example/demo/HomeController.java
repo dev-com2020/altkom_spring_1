@@ -13,7 +13,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String index(Model model) {
-        model.addAttribute("video",videoService.getVideos());
+        model.addAttribute("videos",videoService.getVideos());
         return "index";
     }
 }
