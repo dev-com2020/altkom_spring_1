@@ -12,7 +12,7 @@ public class HomeController {
     record Video(String name) {}
     List<Video> videos = List.of(
             new Video("Pierwsza aplikacja w Spring3"),
-            new Video("Jakiś drugi komunikat"),
+            new Video("Tutaj druga opcja"),
             new Video("To też powinno się wyświetlić")
     );
 
