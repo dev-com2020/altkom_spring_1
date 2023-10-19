@@ -5,8 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface VideoRepository extends JpaRepository
-        <VideoEntity, Long> {
+public interface VideoRepository extends JpaRepository<VideoEntity, Long> {
 
     List<VideoEntity> findByNameContainsIngoreCase(String partialName);
     List<VideoEntity> findByDescriptionContainsIngoreCase(String partialDescription);
