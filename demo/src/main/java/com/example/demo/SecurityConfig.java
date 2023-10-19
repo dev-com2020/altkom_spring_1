@@ -39,9 +39,9 @@ public class SecurityConfig {
                 .and()
                 .formLogin()
                 .and()
-                .httpBasic();
-//                .and()
-//                .csrf().disable();
+                .httpBasic()
+                .and()
+                .csrf().disable();
         return http.build();
     }
 }
