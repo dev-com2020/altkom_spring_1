@@ -17,9 +17,7 @@ public class UserAccount {
     @GeneratedValue
     private Long id;
     private String username;
-
     private String password;
-
     @ElementCollection(fetch = FetchType.EAGER)
     private List<GrantedAuthority> authorities = new ArrayList<>();
 
