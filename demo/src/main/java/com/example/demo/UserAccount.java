@@ -21,25 +21,25 @@ public class UserAccount {
     private String password;
 
     @ElementCollection(fetch = FetchType.EAGER)
-    private List<GrantedAuthority> authoritites = new ArrayList<>();
+    private List<GrantedAuthority> authorities = new ArrayList<>();
 
     protected UserAccount() {
     }
 
-    public UserAccount(String username, String password, String... authoritites) {
+    public UserAccount(String username, String password, String... authorities) {
         this.username = username;
         this.password = password;
-        this.authoritites = Arrays.stream(authoritites)
+        this.authorities = Arrays.stream(authorities)
                 .map(SimpleGrantedAuthority::new)
                 .map(GrantedAuthority.class::cast)
                 .toList();
     }
 
-    public UserDetails asUser(){
+    public UserDetails asUser() {
         return User.withDefaultPasswordEncoder()
                 .username(getUsername())
                 .password(getPassword())
-                .authorities(getAuthoritites())
+                .authorities(getAuthorities())
                 .build();
     }
 
@@ -67,11 +67,14 @@ public class UserAccount {
         this.password = password;
     }
 
-    public List<GrantedAuthority> getAuthoritites() {
-        return authoritites;
+    public List<GrantedAuthority> getAuthorities() {
+        if (authorities == null) {
+            this.authorities = new ArrayList<>();
+        }
+        return authorities;
     }
 
-    public void setAuthoritites(List<GrantedAuthority> authoritites) {
-        this.authoritites = authoritites;
+    public void setAuthorities(List<GrantedAuthority> authorities) {
+        this.authorities = authorities;
     }
 }
