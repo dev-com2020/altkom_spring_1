@@ -3,6 +3,16 @@
     <title>TEST</title>
 </head>
 <h1>Witamy w wypożyczalni</h1>
+
+<form action="/multi-field-search" method="post">
+    <label for="name">Name:</label>
+    <input type="text" name="name">
+    <label for="description">Opis:</label>
+    <input type="text" name="description">
+    <button type="submit">Search</button>
+</form>
+
+
 <ul>
     {{#videos}}
         <li>{{name}}</li>
@@ -11,5 +21,6 @@
 
 <form action="/new-video" method="post">
     <input type="text" name="name">
+    <input type="text" name="description">
     <button type="submit">SUBMIT</button>
 </form>
