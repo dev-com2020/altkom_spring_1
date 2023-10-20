@@ -1,0 +1,4 @@
+#spring.datasource.url=jdbc:sqlite:baza.db
+#spring.datasource.driver-class=org.sqlite.JDBC
+#spring.jpa.hibernate.dll-auto=update
+#spring.jpa.database-platform=org.hibernate.dialect.SQLServerDialect
